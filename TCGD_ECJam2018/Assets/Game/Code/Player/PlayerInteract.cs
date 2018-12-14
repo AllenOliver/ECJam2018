@@ -28,7 +28,7 @@ public class PlayerInteract : MonoBehaviour
             if (ray.collider.tag == "Interactable")
             {
                 //TODO UI updates
-                ui.text = "Hit!";
+                ui.text = ray.collider.gameObject.GetComponent<BaseInteractable>().OnHit();
 
             }
             else
