@@ -34,20 +34,16 @@ public class PlayerInteract : MonoBehaviour
                 if (Input.GetButtonDown("Interact"))
                 {
                     //TODO Interact and stop character
-                    ray.collider.gameObject.GetComponent<BaseInteractable>().OnInteract(true);
+                    ray.collider.gameObject.GetComponent<BaseInteractable>().OnInteract();
                     ui.ClearUIText();
                     
-                }
-                else
-                {
-
-
                 }
 
             }
             else
             {
                 ui.ClearUIText();
+                ui.InteractableMenu.SetActive(false);
             }
 
         }

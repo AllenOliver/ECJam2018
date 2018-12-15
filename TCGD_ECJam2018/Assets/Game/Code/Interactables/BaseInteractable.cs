@@ -22,7 +22,7 @@ public class BaseInteractable :MonoBehaviour
 
     #endregion
 
-    private void Start()
+    public virtual void Start()
     {
         if (interactable)
         {
@@ -38,21 +38,20 @@ public class BaseInteractable :MonoBehaviour
     /// Sets the global bool for this item.
     /// Pls override
     /// </summary>
-    public virtual void SetGlobal(bool valueToSet)
+    public virtual void SetGlobal()
     {
-        valueToSet = true;
     }
 
     /// <summary>
     /// Called when [interact].
     /// Sets global flag and starts UI
     /// </summary>
-    public virtual void OnInteract(bool value)
+    public virtual void OnInteract()
     {
         //TODO Interact and do UI stuff
         var ui = FindObjectOfType<UIManager>();
         ui.OpenInteractMenu(interactable);
-
+        SetGlobal();
     }
 
     #endregion
