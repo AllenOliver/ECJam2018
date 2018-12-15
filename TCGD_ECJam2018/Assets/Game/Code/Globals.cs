@@ -9,5 +9,4 @@ public static class Globals
     public static bool gameStarted;
     #endregion
 
-
 }

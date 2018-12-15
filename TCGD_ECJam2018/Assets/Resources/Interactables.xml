@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InteractableCollection>
+	<Interactables>
+		<Interactable ID = 1>
+			<Name>Cube</Name>
+			<Discription>This is a cube.</Discription>
+			<Image>badTime</Image>
+		</Interactable>
+		<Interactable ID = 2>
+			<Name>Cube</Name>
+			<Discription>This is a cube.</Discription>
+			<Image>badTime</Image>
+		</Interactable>
+		<Interactable ID = 3>
+			<Name>Cube</Name>
+			<Discription>This is a cube.</Discription>
+			<Image>badTime</Image>
+		</Interactable>
+		<Interactable ID = 4>
+			<Name>Cube</Name>
+			<Discription>This is a cube.</Discription>
+			<Image>badTime</Image>
+		</Interactable>
+		<Interactable ID = 5>
+			<Name>Cube</Name>
+			<Discription>This is a cube.</Discription>
+			<Image>badTime</Image>
+		</Interactable>
+		<Interactable ID = 6>
+			<Name>Cube</Name>
+			<Discription>This is a cube.</Discription>
+			<Image>badTime</Image>
+		</Interactable>
+		<Interactable ID = 7>
+			<Name>Cube</Name>
+			<Discription>This is a cube.</Discription>
+			<Image>badTime</Image>
+		</Interactable>
+		<Interactable ID = 8>
+			<Name>Cube</Name>
+			<Discription>This is a cube.</Discription>
+			<Image>badTime</Image>
+		</Interactable>
+		<Interactable ID = 9>
+			<Name>Cube</Name>
+			<Discription>This is a cube.</Discription>
+			<Image>badTime</Image>
+		</Interactable>
+	</Interactables>
+</InteractableCollection>

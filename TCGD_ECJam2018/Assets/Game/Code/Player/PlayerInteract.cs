@@ -9,11 +9,13 @@ public class PlayerInteract : MonoBehaviour
 {
     public int RayLength;
     private RaycastHit ray;
+    private UIManager ui;
 
-    #region TESTING
+    void Start()
+    {
+        ui = FindObjectOfType<UIManager>();
+    }
 
-    public Text ui;
-    #endregion
     void Update()
     {
         Interact();
@@ -21,21 +23,39 @@ public class PlayerInteract : MonoBehaviour
 
     void Interact()
     {
-        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * RayLength, Color.red, .5f);
-
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out ray, RayLength))
         {
             if (ray.collider.tag == "Interactable")
             {
+                ui.SetUIText(ray.collider.gameObject.GetComponent<BaseInteractable>().interactable);
+                
+
                 //TODO UI updates
-                ui.text = ray.collider.gameObject.GetComponent<BaseInteractable>().OnHit();
+                if (Input.GetButtonDown("Interact"))
+                {
+                    //TODO Interact and stop character
+                    ray.collider.gameObject.GetComponent<BaseInteractable>().OnInteract(true);
+                    ui.ClearUIText();
+                    
+                }
+                else
+                {
+
+
+                }
 
             }
             else
             {
-                ui.text = "";
+                ui.ClearUIText();
             }
+
         }
+        else
+        {
+            ui.ClearUIText();
+        }
+
     }
 
 

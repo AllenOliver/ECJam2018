@@ -1,15 +1,36 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class BaseInteractable :MonoBehaviour
 {
+    
+    #region Properties
+
     public string InteractableName;
     public string Description;
-    public Image Image;
+    public Sprite InteractableImage;
+
+    public Interactable interactable;
+
+
+    #endregion
+
+    private void Start()
+    {
+        if (interactable)
+        {
+            InteractableName = interactable.Name;
+            Description = interactable.Description;
+            InteractableImage = interactable.Image;
+        }
+    }
 
     #region Interacting
 
@@ -26,28 +47,16 @@ public class BaseInteractable :MonoBehaviour
     /// Called when [interact].
     /// Sets global flag and starts UI
     /// </summary>
-    public virtual void OnInteract()
+    public virtual void OnInteract(bool value)
     {
         //TODO Interact and do UI stuff
-        SetGlobal(Globals.gameStarted);
-        Save.SaveGame();
+        var ui = FindObjectOfType<UIManager>();
+        ui.OpenInteractMenu(interactable);
 
     }
 
     #endregion
 
-    #region To String Functions
-
-    /// <summary>
-    /// Called when [RayCastHit].
-    /// </summary>
-    /// <returns>A Press to interact prompt</returns>
-    public virtual string OnHit()
-    {
-        return String.Format("Press E to Interact with {0}.",InteractableName);
-    }
-
-    #endregion
 
 
 }
