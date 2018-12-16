@@ -10,5 +10,16 @@ public static class Globals
     public static bool CubeFound;
 
     #endregion
-    //TODO Send back array of global BOOLs
+
+    /// <summary>
+    /// Returns the globals.
+    /// </summary>
+    /// <returns>A list of global bools.</returns>
+    public static List<bool> returnGlobals()
+    {
+        var bools = new List<bool>();
+        bools.Add(gameStarted);
+
+        return bools;
+    }
 }

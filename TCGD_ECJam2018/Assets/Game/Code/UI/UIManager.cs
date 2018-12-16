@@ -1,12 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityStandardAssets.Characters.FirstPerson;
 
+/// <summary>
+/// Manages UI elements and Logic
+/// </summary>
 public class UIManager : MonoBehaviour
 {
+
+    #region Properties
+
     public Text HoverUiText;
 
     public Text InteractableName;
@@ -14,17 +17,27 @@ public class UIManager : MonoBehaviour
     public Image InteractableImage;
     public GameObject InteractableMenu;
 
+    #endregion
+
     #region UI Updates
 
+    /// <summary>
+    /// Sets the UI text.
+    /// </summary>
+    /// <param name="interactable">The interactable.</param>
     public void SetUIText(Interactable interactable)
     {
         HoverUiText.text = String.Format("Press E to interact with {0}.", interactable.Name);
     }
 
+    /// <summary>
+    /// Clears the UI text.
+    /// </summary>
     public void ClearUIText()
     {
         HoverUiText.text = "";
     }
+
     #endregion
 
     #region InteractMenu

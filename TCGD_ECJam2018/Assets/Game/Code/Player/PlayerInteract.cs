@@ -7,9 +7,16 @@ using Debug = UnityEngine.Debug;
 
 public class PlayerInteract : MonoBehaviour
 {
+
+    #region Properties
+
     public int RayLength;
     private RaycastHit ray;
-    private UIManager ui;
+    private UIManager ui; 
+    
+    #endregion
+
+    #region Unity Functions
 
     void Start()
     {
@@ -19,8 +26,13 @@ public class PlayerInteract : MonoBehaviour
     void Update()
     {
         Interact();
-    }
+    } 
 
+    #endregion
+
+    /// <summary>
+    /// Allows the player to interact using raycasting
+    /// </summary>
     void Interact()
     {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out ray, RayLength))
@@ -29,16 +41,12 @@ public class PlayerInteract : MonoBehaviour
             {
                 ui.SetUIText(ray.collider.gameObject.GetComponent<BaseInteractable>().interactable);
                 
-
-                //TODO UI updates
                 if (Input.GetButtonDown("Interact"))
                 {
                     //TODO Interact and stop character
                     ray.collider.gameObject.GetComponent<BaseInteractable>().OnInteract();
                     ui.ClearUIText();
-                    
                 }
-
             }
             else
             {
@@ -53,6 +61,4 @@ public class PlayerInteract : MonoBehaviour
         }
 
     }
-
-
 }
