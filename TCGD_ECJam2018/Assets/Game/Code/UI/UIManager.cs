@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ public class UIManager : MonoBehaviour
     #region Properties
 
     public Text HoverUiText;
+    public Text PlayerOutputText;
+
 
     public Text InteractableName;
     public Text InteractableDesc;
@@ -31,10 +34,36 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Sets the player output text.
+    /// </summary>
+    /// <param name="interactable">The interactable.</param>
+    public void SetUIOutputText(string text, float typeDelay)
+    {
+        StartCoroutine(TypeText(text, typeDelay));
+    }
+
+    /// <summary>
     /// Clears the UI text.
     /// </summary>
     public void ClearUIText()
     {
+        HoverUiText.text = "";
+    }
+
+    /// <summary>
+    /// Clears the UI text.
+    /// </summary>
+    public void ClearPlayerUIText()
+    {
+        PlayerOutputText.text = "";
+    }
+
+    /// <summary>
+    /// Clears all ui.
+    /// </summary>
+    public void ClearAll()
+    {
+        PlayerOutputText.text = "";
         HoverUiText.text = "";
     }
 
@@ -67,4 +96,12 @@ public class UIManager : MonoBehaviour
 
     #endregion
 
+    IEnumerator TypeText(string text, float speed)
+    {
+        foreach (var cha in text)
+        {
+            PlayerOutputText.text += cha;
+            yield return new WaitForSeconds(speed);
+        }
+    }
 }

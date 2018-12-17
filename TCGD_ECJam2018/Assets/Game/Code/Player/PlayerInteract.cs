@@ -12,7 +12,8 @@ public class PlayerInteract : MonoBehaviour
 
     public int RayLength;
     private RaycastHit ray;
-    private UIManager ui; 
+    private UIManager ui;
+    private bool uiDelay = true;
     
     #endregion
 
@@ -40,7 +41,12 @@ public class PlayerInteract : MonoBehaviour
             switch (ray.collider.tag)
             {
                 case "Interactable":
-                    ui.SetUIText(ray.collider.gameObject.GetComponent<BaseInteractable>().interactable);
+                    if (uiDelay)
+                    {
+                        ui.SetUIText(ray.collider.gameObject.GetComponent<BaseInteractable>().interactable);
+                        uiDelay = false;
+                        StartCoroutine(setUIDelay());
+                    }
 
                     if (Input.GetButtonDown("Interact"))
                     {
@@ -51,7 +57,12 @@ public class PlayerInteract : MonoBehaviour
 
                     break;
                 case "Door":
-                    ui.HoverUiText.text = "Press E to interact";
+                    if (uiDelay)
+                    {
+                        ui.HoverUiText.text = "Press E to interact";
+                        uiDelay = false;
+                        StartCoroutine(setUIDelay());
+                    }
 
                     if (Input.GetButtonDown("Interact"))
                     {
@@ -71,5 +82,11 @@ public class PlayerInteract : MonoBehaviour
             ui.ClearUIText();
         }
 
+    }
+
+    IEnumerator setUIDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        uiDelay = true;
     }
 }
