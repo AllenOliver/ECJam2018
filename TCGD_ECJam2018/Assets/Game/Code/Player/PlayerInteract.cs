@@ -37,21 +37,32 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out ray, RayLength))
         {
-            if (ray.collider.tag == "Interactable")
+            switch (ray.collider.tag)
             {
-                ui.SetUIText(ray.collider.gameObject.GetComponent<BaseInteractable>().interactable);
-                
-                if (Input.GetButtonDown("Interact"))
-                {
-                    //TODO Interact and stop character
-                    ray.collider.gameObject.GetComponent<BaseInteractable>().OnInteract();
+                case "Interactable":
+                    ui.SetUIText(ray.collider.gameObject.GetComponent<BaseInteractable>().interactable);
+
+                    if (Input.GetButtonDown("Interact"))
+                    {
+                        //TODO Interact and stop character
+                        ray.collider.gameObject.GetComponent<BaseInteractable>().OnInteract();
+                        ui.ClearUIText();
+                    }
+
+                    break;
+                case "Door":
+                    ui.HoverUiText.text = "Press E to interact";
+
+                    if (Input.GetButtonDown("Interact"))
+                    {
+                        ray.collider.gameObject.GetComponent<Door>().Open();
+                    }
+                    break;
+                default:
                     ui.ClearUIText();
-                }
-            }
-            else
-            {
-                ui.ClearUIText();
-                ui.InteractableMenu.SetActive(false);
+                    ui.InteractableMenu.SetActive(false);
+                    break;
+
             }
 
         }
