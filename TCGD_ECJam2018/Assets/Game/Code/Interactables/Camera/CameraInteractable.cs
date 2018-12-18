@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeInteractable : BaseInteractable
+public class CameraInteractable : BaseInteractable
 {
     public override void SetGlobal()
     {
-        //Globals.CubeFound = true;
+        Globals.CameraFound = true;
     }
 }

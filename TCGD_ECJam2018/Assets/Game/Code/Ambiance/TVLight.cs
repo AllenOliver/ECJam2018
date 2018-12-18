@@ -29,6 +29,6 @@ public class TVLight : MonoBehaviour
     /// </summary>
     void RandomizeLight()
     {
-        tv.intensity = Random.Range(.2f, .7f);
+        tv.intensity = Random.Range(4f, 7f);
     }
 }

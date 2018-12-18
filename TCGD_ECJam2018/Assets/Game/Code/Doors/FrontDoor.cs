@@ -51,7 +51,7 @@ public class FrontDoor : Door
     IEnumerator KeepPlaying()
     {
         var ui = FindObjectOfType<UIManager>();
-        ui.SetUIOutputText("I better keep looking for ideas...", .08f);
+        ui.SetUIOutputText("I better keep looking for ideas...");
         yield return new WaitForSeconds(4f);
         ui.ClearPlayerUIText();
     }

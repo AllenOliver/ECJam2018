@@ -37,9 +37,9 @@ public class UIManager : MonoBehaviour
     /// Sets the player output text.
     /// </summary>
     /// <param name="interactable">The interactable.</param>
-    public void SetUIOutputText(string text, float typeDelay)
+    public void SetUIOutputText(string text)
     {
-        StartCoroutine(TypeText(text, typeDelay));
+        StartCoroutine(TypeText(text, .08f));
     }
 
     /// <summary>
