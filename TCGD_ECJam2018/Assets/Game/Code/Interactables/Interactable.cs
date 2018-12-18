@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Interactable : ScriptableObject
 {
     public string Name;
+    [TextArea(0,2)]
     public string Description;
     public Sprite Image;
 }

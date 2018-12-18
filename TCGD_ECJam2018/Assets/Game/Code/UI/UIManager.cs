@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Text InteractableDesc;
     public Image InteractableImage;
     public GameObject InteractableMenu;
+    public GameObject FadePanel;
 
     #endregion
 
@@ -93,6 +94,27 @@ public class UIManager : MonoBehaviour
     }
 
 
+
+    #endregion
+
+    #region Fading
+
+    /// <summary>
+    /// Fades in screen.
+    /// </summary>
+    public void fadeIn()
+    {
+       var anim = FadePanel.GetComponent<Animator>();
+        anim.SetTrigger("FadeIn");
+    }
+    /// <summary>
+    /// Fades out screen.
+    /// </summary>
+    public void fadeOut()
+    {
+        var anim = FadePanel.GetComponent<Animator>();
+        anim.SetTrigger("FadeOut");
+    }
 
     #endregion
 

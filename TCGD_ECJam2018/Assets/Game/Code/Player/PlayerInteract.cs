@@ -59,7 +59,7 @@ public class PlayerInteract : MonoBehaviour
                 case "Door":
                     if (uiDelay)
                     {
-                        ui.HoverUiText.text = "Press E to interact";
+                        ui.HoverUiText.text = "Open / Close";
                         uiDelay = false;
                         StartCoroutine(setUIDelay());
                     }

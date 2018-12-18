@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CutsceneHandler : MonoBehaviour
@@ -37,6 +38,8 @@ public class CutsceneHandler : MonoBehaviour
         yield return new WaitUntil(() => Input.anyKey);
         image.sprite = slides[6];
         yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => Input.anyKey); 
+        yield return new WaitUntil(() => Input.anyKey);
+        SceneManager.LoadScene("Intro");
+
     }
 }

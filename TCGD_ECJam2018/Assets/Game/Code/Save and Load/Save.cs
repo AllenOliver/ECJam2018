@@ -62,7 +62,7 @@ public static class Save
         SaveGameData d = new SaveGameData();
 
         #region Save Variables
-        d.StartedGame = Globals.gameStarted;
+        //d.StartedGame = Globals.gameStarted;
         #endregion
 
         return d;

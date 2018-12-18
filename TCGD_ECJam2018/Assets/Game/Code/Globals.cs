@@ -6,7 +6,6 @@ public static class Globals
 {
 
     #region Public Game Vars
-    public static bool gameStarted;
     public static bool VideoCardFound;
     public static bool PCMagFound;
     public static bool CameraFound;
@@ -28,7 +27,6 @@ public static class Globals
     public static List<bool> returnGlobals()
     {
         var bools = new List<bool>();
-        bools.Add(gameStarted);
         bools.Add(VideoCardFound);
         bools.Add(PCMagFound);
         bools.Add(CameraFound);
