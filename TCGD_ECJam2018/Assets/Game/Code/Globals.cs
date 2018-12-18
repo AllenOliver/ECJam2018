@@ -7,7 +7,11 @@ public static class Globals
 
     #region Public Game Vars
     public static bool gameStarted;
-    public static bool CubeFound;
+    public static bool VideoCardFound;
+    public static bool PCMagFound;
+    public static bool CameraFound;
+
+
 
     #endregion
 
@@ -19,6 +23,9 @@ public static class Globals
     {
         var bools = new List<bool>();
         bools.Add(gameStarted);
+        bools.Add(VideoCardFound);
+        bools.Add(PCMagFound);
+        bools.Add(CameraFound);
 
         return bools;
     }
