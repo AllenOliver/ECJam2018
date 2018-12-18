@@ -10,6 +10,12 @@ public static class Globals
     public static bool VideoCardFound;
     public static bool PCMagFound;
     public static bool CameraFound;
+    public static bool ComputerFound;
+    public static bool CalendarFound;
+    public static bool PhotoBookFound;
+    public static bool DrawingFound;
+    public static bool TabletCaseFound;
+    public static bool TextbookFound;
 
 
 
@@ -26,6 +32,12 @@ public static class Globals
         bools.Add(VideoCardFound);
         bools.Add(PCMagFound);
         bools.Add(CameraFound);
+        bools.Add(ComputerFound);
+        bools.Add(CalendarFound);
+        bools.Add(PhotoBookFound);
+        bools.Add(DrawingFound);
+        bools.Add(TabletCaseFound);
+        bools.Add(TextbookFound);
 
         return bools;
     }

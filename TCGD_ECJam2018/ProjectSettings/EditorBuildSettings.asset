@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 903ef1bb81a1fd0449ab7fee71b3cb9a
+  - enabled: 1
+    path: Assets/Scenes/TestHouseScene.unity
+    guid: 9350dc05464db37469baf20c9276d098
+  - enabled: 1
+    path: Assets/Scenes/Camera Ending.unity
+    guid: 601e172543583ad4da52c5f69d8859c3
+  - enabled: 1
+    path: Assets/Scenes/Tablet Ending.unity
+    guid: c55f7f489972d314c9a3bdb752fffe75
+  - enabled: 1
+    path: Assets/Scenes/Video Card Ending.unity
+    guid: 12471d7466b05eb4f9ee33fb65ddab9d
   m_configObjects: {}
